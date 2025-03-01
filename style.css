@@ -12,15 +12,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .calculator {
   background: rgba(0, 0, 0, 0.75);
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 100%;
+  width: 400px;
 }
 
 .calculator form input {
@@ -51,13 +54,13 @@
 form .display {
   display: flex;
   justify-content: flex-end;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 form .display input {
   text-align: right;
   flex: 1;
-  font-size: 50px;
+  font-size: 40px;
   box-shadow: none;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -66,6 +69,8 @@ form .display input {
   color: #fff;
   letter-spacing: 2px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 form input.operator {
@@ -105,4 +110,76 @@ form input[value="DE"] {
 
 .calculator {
   animation: glow 3s infinite;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For medium-sized devices (tablets) */
+@media screen and (max-width: 768px) {
+  .calculator {
+    padding: 15px;
+  }
+  
+  .calculator form input {
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+    margin: 8px;
+  }
+  
+  form .display input {
+    font-size: 35px;
+  }
+  
+  form input.equal {
+    width: 130px;
+  }
+}
+
+/* For small devices (mobile phones) */
+@media screen and (max-width: 480px) {
+  .calculator {
+    padding: 15px 10px;
+    width: 95%;
+  }
+  
+  .calculator form input {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+  
+  form .display input {
+    font-size: 28px;
+    padding: 0 15px;
+  }
+  
+  form input.equal {
+    width: 105px;
+  }
+}
+
+/* For very small devices */
+@media screen and (max-width: 320px) {
+  .calculator {
+    padding: 10px 5px;
+  }
+  
+  .calculator form input {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 4px;
+  }
+  
+  form .display input {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  
+  form input.equal {
+    width: 90px;
+  }
 }
